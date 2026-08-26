@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Artem Serdyuk, PhD candidate in sociology at the National University of Kyiv-Mohyla Academy. Agent-based models of corruption, institutional trust, patronage networks, and the organizational culture of Ukrainian military units.">
+  <title>Artem Serdyuk · Research</title>
+  <style>
+:root { color-scheme: light; --canvas:#ecefe9; --paper:#fffdf8; --ink:#2b3138; --soft-ink:#4b535c; --muted:#6d7681; --accent:#3f5666; --accent-dark:#2b3d49; --accent-soft:#e1e8ec; --line:#d6d9d2; --link:#2f6a72; --focus:#1f5c64; --shadow:0 20px 54px rgba(50,62,72,.14); }
+* { box-sizing:border-box; }
+html { min-width:320px; background:var(--canvas); }
+body { min-height:100vh; min-height:100svh; margin:0; display:grid; place-items:center; padding:48px 24px; color:var(--ink); background:radial-gradient(circle at 12% 9%,rgba(255,255,255,.92),transparent 30rem),radial-gradient(circle at 88% 27%,rgba(163,183,194,.26),transparent 26rem),var(--canvas); font-family:Aptos,Calibri,"Segoe UI",Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+.landing-card { width:min(100%,980px); padding:clamp(30px,5vw,54px) clamp(24px,6vw,66px) clamp(30px,4vw,44px); background:var(--paper); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); }
+
+.lang-switch { display:flex; width:max-content; gap:3px; margin:0 0 clamp(14px,2.5vw,22px) auto; padding:3px; background:#fff; border:1px solid var(--line); border-radius:999px; box-shadow:0 2px 6px rgba(50,62,72,.09); }
+.lang-opt { display:inline-flex; min-width:56px; min-height:29px; align-items:center; justify-content:center; padding:0 13px; color:var(--accent-dark); text-decoration:none; background:transparent; border-radius:999px; font-size:.74rem; font-weight:800; line-height:1.1; letter-spacing:.08em; text-transform:uppercase; transition:background 150ms ease,color 150ms ease; }
+.lang-opt:hover { background:var(--accent-soft); }
+.lang-opt[aria-current] { color:#fff; background:var(--accent); box-shadow:0 1px 3px rgba(43,61,73,.32); }
+.lang-opt:focus-visible { outline:3px solid var(--focus); outline-offset:2px; }
+
+.masthead { text-align:center; }
+.eyebrow { margin:0 0 16px; color:var(--muted); font-size:.74rem; font-weight:800; line-height:1.45; letter-spacing:.15em; text-transform:uppercase; }
+h1 { max-width:670px; margin:0 auto; color:var(--accent-dark); font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.2rem,6vw,3.7rem); font-weight:500; line-height:1.05; letter-spacing:-.035em; text-wrap:balance; }
+.subtitle { max-width:620px; margin:16px auto 0; color:var(--muted); font-size:1rem; line-height:1.5; }
+
+.bio { max-width:680px; margin:clamp(22px,3vw,28px) auto 0; }
+.bio p { margin:0; color:var(--soft-ink); font-size:.97rem; line-height:1.58; }
+
+.profile-links { display:flex; flex-wrap:wrap; justify-content:center; gap:9px; margin-top:clamp(22px,3vw,28px); }
+.profile-link { display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:9px 17px; color:var(--accent-dark); text-decoration:none; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:.82rem; font-weight:700; line-height:1.2; transition:transform 160ms ease,border-color 160ms ease,background 160ms ease,box-shadow 160ms ease; }
+.profile-link:hover { transform:translateY(-2px); background:var(--accent-soft); border-color:#b6c2c9; box-shadow:0 8px 18px rgba(43,61,73,.13); }
+.profile-link:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+.profile-link .dot { flex:none; width:9px; height:9px; border-radius:50%; background:var(--accent); }
+.profile-link .dot-orcid { background:#a6ce39; }
+.profile-link .id { color:var(--muted); font-weight:600; font-variant-numeric:tabular-nums; }
+
+.strand { margin-top:clamp(30px,4vw,42px); }
+.strand-title { display:flex; align-items:center; gap:14px; margin:0 0 13px; color:var(--muted); font-size:.74rem; font-weight:800; line-height:1.45; letter-spacing:.15em; text-transform:uppercase; }
+.strand-title::after { content:""; flex:1; height:1px; background:var(--line); }
+
+.project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.project-card { display:grid; align-content:start; padding:19px 21px 17px; color:var(--ink); text-decoration:none; background:#fff; border:1px solid var(--line); border-top:4px solid var(--card-accent); border-radius:13px; transition:transform 160ms ease,border-color 160ms ease,background 160ms ease,box-shadow 160ms ease; }
+.project-card:hover { transform:translateY(-2px); background:var(--card-tint); border-color:var(--card-edge); border-top-color:var(--card-accent); box-shadow:0 10px 24px var(--card-shadow); }
+.project-card:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+.card-eyebrow { justify-self:start; padding:3px 11px; color:var(--card-accent-dark); background:var(--card-soft); border-radius:999px; font-size:.66rem; font-weight:800; line-height:1.4; letter-spacing:.1em; text-transform:uppercase; }
+.card-title { margin-top:11px; color:var(--card-accent-dark); font-family:Georgia,"Times New Roman",serif; font-size:1.24rem; line-height:1.2; }
+.card-text { margin-top:9px; color:var(--soft-ink); font-size:.89rem; line-height:1.52; }
+.card-meta { display:flex; flex-wrap:wrap; gap:6px; margin-top:13px; }
+.chip { padding:3px 9px; color:var(--muted); background:#fbfbf8; border:1px solid var(--line); border-radius:999px; font-size:.67rem; font-weight:700; line-height:1.5; letter-spacing:.02em; }
+
+.accent-rust { --card-accent:#8b3a2b; --card-accent-dark:#642519; --card-soft:#f4e3d9; --card-tint:#fdf8f4; --card-edge:#d3b3a3; --card-shadow:rgba(100,37,25,.15); }
+.accent-teal { --card-accent:#2f7180; --card-accent-dark:#1f4d59; --card-soft:#dcecef; --card-tint:#f6fbfb; --card-edge:#aac4ca; --card-shadow:rgba(31,77,89,.15); }
+.accent-green { --card-accent:#2f7168; --card-accent-dark:#24564f; --card-soft:#e1eeea; --card-tint:#f5faf8; --card-edge:#abc8be; --card-shadow:rgba(36,86,79,.14); }
+.accent-olive { --card-accent:#707946; --card-accent-dark:#50582f; --card-soft:#edf0e2; --card-tint:#faf9f1; --card-edge:#bfc4a4; --card-shadow:rgba(64,69,45,.15); }
+
+.pub-list { display:grid; gap:8px; margin:0; padding:0; list-style:none; }
+.pub { display:grid; grid-template-columns:auto minmax(0,1fr); gap:14px; align-items:baseline; padding:10px 15px; background:#fff; border:1px solid var(--line); border-radius:11px; }
+.pub-year { color:var(--muted); font-size:.75rem; font-weight:800; letter-spacing:.06em; font-variant-numeric:tabular-nums; }
+.pub-title { color:var(--link); font-size:.9rem; line-height:1.4; text-decoration:none; }
+.pub-title:hover { text-decoration:underline; }
+.pub-title:focus-visible { outline:3px solid var(--focus); outline-offset:2px; border-radius:3px; }
+.pub-venue { display:block; margin-top:3px; color:var(--muted); font-size:.77rem; line-height:1.4; }
+
+.doc-byline { display:grid; gap:2px; margin:clamp(28px,4vw,38px) 0 0; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:.82rem; line-height:1.45; text-align:center; }
+.doc-byline .byline-name { font-weight:700; }
+.doc-byline .byline-copy { margin-top:3px; font-size:.75rem; }
+.doc-byline a { color:var(--link); }
+
+@media (max-width:760px) { .project-grid{grid-template-columns:1fr} }
+@media (max-width:560px) { body{padding:24px 16px} .landing-card{padding:26px 20px 28px;border-radius:16px} .lang-switch{margin:0 auto 18px} .profile-link{width:100%;justify-content:center} .pub{grid-template-columns:1fr;gap:4px} }
+@media (prefers-reduced-motion:reduce) { .profile-link,.project-card,.lang-opt{transition:none} .profile-link:hover,.project-card:hover{transform:none} }
+  </style>
+</head>
+<body>
+  <main class="landing-card" aria-labelledby="page-title">
+    <div class="lang-switch" role="group" aria-label="Language">
+      <a class="lang-opt" href="index.html" hreflang="en" lang="en" title="English" aria-current="page">EN</a>
+      <a class="lang-opt" href="index_ua.html" hreflang="uk" lang="uk" title="Українська">UA</a>
+    </div>
+
+    <header class="masthead">
+      <p class="eyebrow">Sociology · Agent-based modelling</p>
+      <h1 id="page-title">Artem Serdyuk</h1>
+      <p class="subtitle">PhD candidate in sociology, National University of Kyiv-Mohyla Academy</p>
+    </header>
+
+    <div class="bio">
+      <p>I build agent-based models, simulations in which each person is a separate agent. I use them to study how social order holds together and how it changes: corruption, institutional trust and patron–client networks, and the everyday culture of Ukrainian military units. I also work on the method itself: when agent-based modelling fits a social question, and how such models should be validated.</p>
+    </div>
+
+    <nav class="profile-links" aria-label="Researcher profiles and contact">
+      <a class="profile-link" href="https://orcid.org/0000-0002-0060-1311" target="_blank" rel="noopener"><span class="dot dot-orcid" aria-hidden="true"></span>ORCID <span class="id">0000-0002-0060-1311</span></a>
+      <a class="profile-link" href="https://scholar.google.com/citations?user=2ZJHz2UAAAAJ&amp;hl=en" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>Google Scholar</a>
+      <a class="profile-link" href="mailto:a.serdiuk@ukma.edu.ua"><span class="dot" aria-hidden="true"></span>a.serdiuk@ukma.edu.ua</a>
+    </nav>
+
+    <section class="strand" aria-labelledby="strand-corruption">
+      <h2 class="strand-title" id="strand-corruption">Corruption, trust and networks</h2>
+      <div class="project-grid">
+        <a class="project-card accent-rust" href="https://ekartem.github.io/corruption/">
+          <span class="card-eyebrow">Agent-based model</span>
+          <span class="card-title">Corruption and Trust Dynamics</span>
+          <span class="card-text">Two processes usually studied apart: officials capturing public money, and citizens’ trust in institutions eroding. At what level of perceived corruption does trust tip into collapse, and does transparency dissolve a corrupt network, fragment it, or just move it to more opaque channels?</span>
+          <span class="card-meta"><span class="chip">Run the model</span><span class="chip">Plain language</span><span class="chip">Description</span><span class="chip">EN / UA</span><span class="chip">Audio</span></span>
+        </a>
+        <a class="project-card accent-teal" href="https://ekartem.github.io/corruption2/">
+          <span class="card-eyebrow">Research program</span>
+          <span class="card-title">Corrupt-network resilience</span>
+          <span class="card-text">Arrests remove people from a corrupt network without dissolving the network: someone is promoted, someone new is drawn in, the scheme resumes. How such a network withstands targeted disruption, and why the public is part of that system.</span>
+          <span class="card-meta"><span class="chip">Run the model</span><span class="chip">Plain language</span><span class="chip">Proposal</span><span class="chip">Description</span><span class="chip">EN / UA</span><span class="chip">Audio</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="strand" aria-labelledby="strand-military">
+      <h2 class="strand-title" id="strand-military">Military organizational culture</h2>
+      <div class="project-grid">
+        <a class="project-card accent-green" href="https://ekartem.github.io/military/">
+          <span class="card-eyebrow">Research program</span>
+          <span class="card-title">Command Culture and Change from Below</span>
+          <span class="card-text">Units formally follow mission command; everyday practice is often hierarchical. The program defines command culture in five layers and traces how it changes from below, with the model weighing intervention strategies before any field pilot.</span>
+          <span class="card-meta"><span class="chip">Run the model</span><span class="chip">Proposal</span><span class="chip">Description</span><span class="chip">EN / UA</span></span>
+        </a>
+        <a class="project-card accent-olive" href="https://ekartem.github.io/military2/">
+          <span class="card-eyebrow">Research program</span>
+          <span class="card-title">Unwritten Rules of the Unit</span>
+          <span class="card-text">Since 2022, contract service members and mobilized civilians serve side by side under two orders at once: the formal one and the unwritten one. How a psychological service can see those rules, and choose a stance toward each.</span>
+          <span class="card-meta"><span class="chip">Run the model</span><span class="chip">Proposal</span><span class="chip">Description</span><span class="chip">EN / UA</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="strand" aria-labelledby="strand-pubs">
+      <h2 class="strand-title" id="strand-pubs">Selected publications</h2>
+      <ul class="pub-list">
+        <li class="pub">
+          <span class="pub-year">2026</span>
+          <span class="pub-body"><a class="pub-title" href="https://doi.org/10.15407/socium2026.01.043" target="_blank" rel="noopener">Choosing agent-based modelling as a method of social research: practical recommendations</a><span class="pub-venue">Ukrainian society</span></span>
+        </li>
+        <li class="pub">
+          <span class="pub-year">2026</span>
+          <span class="pub-body"><a class="pub-title" href="https://doi.org/10.1007/978-3-032-31712-4_39" target="_blank" rel="noopener">Beyond economic factors: agent-based modeling of Ukrainian refugee decision-making</a><span class="pub-venue">Springer Proceedings in Complexity</span></span>
+        </li>
+        <li class="pub">
+          <span class="pub-year">2025</span>
+          <span class="pub-body"><a class="pub-title" href="https://doi.org/10.18523/2617-9067.2025.8.4-15" target="_blank" rel="noopener">Choosing validation methods for agent-based models: a practical framework</a><span class="pub-venue">NaUKMA Research Papers. Sociology</span></span>
+        </li>
+        <li class="pub">
+          <span class="pub-year">2023</span>
+          <span class="pub-body"><a class="pub-title" href="https://doi.org/10.18523/2617-9067.2023.6.39-49" target="_blank" rel="noopener">Organizational adaptation to a disruption caused by the full-scale russian invasion of Ukraine</a><span class="pub-venue">NaUKMA Research Papers. Sociology</span></span>
+        </li>
+      </ul>
+    </section>
+
+    <p class="doc-byline">
+      <span class="byline-name">Artem Serdyuk</span>
+      <span class="byline-affil">National University of Kyiv-Mohyla Academy · <a href="mailto:a.serdiuk@ukma.edu.ua">a.serdiuk@ukma.edu.ua</a></span>
+      <span class="byline-copy">August 2026 · © 2026 Artem Serdyuk. All rights reserved.</span>
+    </p>
+  </main>
+</body>
+</html>
